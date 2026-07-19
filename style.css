@@ -1,0 +1,29 @@
+.add-contact-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+header {
+  background-color: teal;
+  font-weight: bold;
+  color: white;
+}
+.contact-form {
+  line-height: 1.5;
+  gap: 5px;
+  padding: 20px;
+  width: 250px;
+  height: 250px;
+  margin: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.phone-no {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.isd-code {
+  width: 60px;
+}

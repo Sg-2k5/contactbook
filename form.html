@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="add-contact-header">
+        <div>
+          <a href="index.html">
+            <img
+              src="https://www.svgrepo.com/show/205094/telephone-call-telephone.svg"
+              alt="exit"
+              width="30"
+              height="20"
+            />
+            All Contacts
+          </a>
+        </div>
+
+        <span class="add-contact">Create Contact</span>
+
+        <button>save</button>
+      </div>
+    </header>
+    <center>
+      <form id="contact-form" class="contact-form">
+        <label for="name" placeholder="Name">Name:</label><br />
+        <input type="text" id="name" name="name" placeholder="Name" required />
+        <br />
+
+        <label for="email">Email:</label><br />
+        <input
+          type="email"
+          placeholder="Email"
+          id="email"
+          name="email"
+          required
+        />
+        <br />
+
+        <label for="phone">Phone:</label><br />
+        <div class="phone-no">
+          <input
+            type="tel"
+            name="isd_code"
+            placeholder="+91"
+            maxlength="3"
+            class="isd-code"
+            required
+          />
+          <input type="tel" id="phone" name="phone" maxlength="10" required />
+        </div>
+
+        <label for="address">Address:</label><br />
+        <textarea id="address" name="address" required></textarea>
+        <br />
+      </form>
+    </center>
+  </body>
+</html>
