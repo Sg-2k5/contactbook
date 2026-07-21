@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Book</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="logo-area">
+        <img
+          src="https://www.svgrepo.com/show/205094/telephone-call-telephone.svg"
+          alt="phone"
+          width="30"
+          height="20"
+        />
+        Contact Book
+      </div>
+
+      <form class="search-form">
+        <div class="search">
+          <span class="material-symbols-outlined">search</span>
+          <input
+            class="search-input"
+            type="search"
+            placeholder="Search Contacts"
+          />
+        </div>
+      </form>
+      <a href="form.html">
+        <button class="add-contact-btn">+ Add Contact</button></a
+      >
+    </header>
+
+    <main class="table-container">
+      <table id="contact-table" class="contact-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td data-label="Name" class="contact-name">vaseegaran</td>
+            <td data-label="Email">vaseegaran@gmail.com</td>
+            <td data-label="Phone">+91 5432123456</td>
+            <td data-label="Address">Nungambakkam, Chennai</td>
+            <td data-label="Actions">
+              <div class="action-buttons">
+                <button class="CRUD btn-edit">Edit</button>
+                <button class="CRUD btn-delete">Delete</button>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td data-label="Name" class="contact-name">Sashank</td>
+            <td data-label="Email">sashank@gmail.com</td>
+            <td data-label="Phone">+91 8765432109</td>
+            <td data-label="Address">Ganesh Nagar,Velachery,Chennai</td>
+            <td data-label="Actions">
+              <div class="action-buttons">
+                <button class="CRUD btn-edit">Edit</button>
+                <button class="CRUD btn-delete">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name" class="contact-name">sam</td>
+            <td data-label="Email">sam@gmail.com</td>
+            <td data-label="Phone">+91 8765432109</td>
+            <td data-label="Address">Dubai street,Dubai main road</td>
+            <td data-label="Actions">
+              <div class="action-buttons">
+                <button class="CRUD btn-edit">Edit</button>
+                <button class="CRUD btn-delete">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name" class="contact-name">tom</td>
+            <td data-label="Email">tom@gmail.com</td>
+            <td data-label="Phone">+91 8765432109</td>
+            <td data-label="Address">Ganesh Nagar,Velachery,Chennai</td>
+            <td data-label="Actions">
+              <div class="action-buttons">
+                <button class="CRUD btn-edit">Edit</button>
+                <button class="CRUD btn-delete">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

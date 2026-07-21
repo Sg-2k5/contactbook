@@ -20,7 +20,7 @@
 
         <span class="add-contact">Create Contact</span>
 
-        <button>save</button>
+        <button class="save-contacts">save</button>
       </div>
     </header>
     <center>
@@ -41,14 +41,9 @@
 
         <label for="phone">Phone:</label><br />
         <div class="phone-no">
-          <input
-            type="tel"
-            name="isd_code"
-            placeholder="+91"
-            maxlength="3"
-            class="isd-code"
-            required
-          />
+          <select name="country-code" id="country-code" required>
+            <option value="+91">+91</option>
+          </select>
           <input type="tel" id="phone" name="phone" maxlength="10" required />
         </div>
 

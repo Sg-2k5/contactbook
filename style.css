@@ -1,13 +1,39 @@
 .add-contact-header {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 10px 10px;
 }
-header {
-  background-color: teal;
-  font-weight: bold;
+
+.add-contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #4caf50;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.add-contact-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: whitesmoke;
+  font-weight: bold;
+  color: #333;
 }
 .contact-form {
   line-height: 1.5;
@@ -26,4 +52,110 @@ header {
 }
 .isd-code {
   width: 60px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  padding: 5px;
+  width: max-content;
+}
+
+.search-input[type="search"] {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  margin-left: 10px;
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+}
+.search-input[type="search"]::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+}
+
+.search-form {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search {
+  width: min(420px, 100%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.table-container {
+  margin: 20px;
+  /* border: 1px solid #ccc;
+  border-radius: 5px; */
+  overflow-x: auto;
+}
+.CRUD {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+tbody tr td .CRUD:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+}
+
+.contact-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.save-contacts {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+.contact-table tr {
+  margin-bottom: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
+}
+.contact-table tbody tr:hover {
+  background: #f9fafb;
+}
+.contact-table th,
+.contact-table td {
+  padding: 12px 14px;
+  text-align: left;
+}
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.contact-table th {
+  background: black;
+  color: white;
+  font-weight: bold;
 }
