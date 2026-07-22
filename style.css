@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  font-size: 18px;
 }
 header {
   background: rgba(186, 176, 176, 0.7);
@@ -34,12 +35,10 @@ header {
   transform: translateY(-1px);
   box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 header {
   background-color: whitesmoke;
   font-weight: bold;
@@ -56,10 +55,9 @@ header {
   border: 1px solid black;
   border-radius: 20px;
   padding: 2px 8px;
-  width: min(400px, 100%);
+  width: 300px;
   box-sizing: border-box;
 }
-
 .search-input[type="search"] {
   font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
@@ -67,12 +65,11 @@ header {
   border: none;
   background: transparent;
   outline: none;
-  width: 50%;
+  width: 100%;
 }
 .search-input[type="search"]::placeholder {
   color: rgba(0, 0, 0, 0.5);
 }
-
 .topbar {
   display: flex;
   align-items: center;
@@ -86,17 +83,15 @@ header {
 }
 .CRUD {
   border: none;
-  padding: 5px 10px;
+  padding: 8px 16px;
   border-radius: 4px;
   font-size: 13px;
   transition: all 0.3s ease;
 }
-
 tbody tr td .CRUD:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
 }
-
 .contact-name {
   display: flex;
   align-items: center;
@@ -134,7 +129,6 @@ tbody tr td .CRUD:hover {
 }
 .contact-table {
   width: 100%;
-  min-width: 600px;
   border-collapse: collapse;
   border-spacing: 0 15px;
   margin-top: 20px;
@@ -145,6 +139,7 @@ tbody tr td .CRUD:hover {
   overflow: hidden;
 }
 .contact-table th {
+  padding: 12px 14px;
   background: black;
   color: white;
   font-weight: bold;
@@ -201,36 +196,46 @@ tbody tr td .CRUD:hover {
   width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 425px) {
   .contact-form {
     padding: 16px;
   }
   .form-details label {
     font-size: 12px;
   }
-
+  .table-container thead th {
+    display: none;
+  }
+  .table-container tbody td {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding-left: 10%;
+    position: relative;
+    line-height: 0.5;
+  }
+  .search {
+    width: 100%;
+  }
+  .add-contact-btn {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+  .logo-area {
+    font-size: 10px;
+  }
+}
+@media (max-width: 768px) {
   .table-container {
     margin: 10px;
   }
-  .contact-table th,
-  .contact-table td {
-    padding: 8px 10px;
-    font-size: 12px;
-    white-space: normal;
-    word-break: break-word;
-  }
-  .contact-table {
-    font-size: 12px;
+  .contact-form {
+    max-width: 100%;
   }
   .action-buttons {
     display: flex;
     flex-direction: row;
     gap: 4px;
-    flex-wrap: nowrap;
-  }
-  .CRUD {
-    padding: 4px 6px;
-    font-size: 11px;
-    white-space: nowrap;
+    transition: all 0.3s ease;
   }
 }
