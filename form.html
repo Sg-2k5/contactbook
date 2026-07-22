@@ -1,38 +1,29 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta name="view-transition" content="same-origin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Contact</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
   </head>
   <body>
-    <header>
-      <div class="add-contact-header">
-        <a href="index.html" class="back-link">
-          <span class="material-symbols-outlined">arrow_back</span>
-          <span>All Contacts</span>
-        </a>
+    <div class="form-page">
+      <header>
+        <div class="add-contact-header">
+          <a href="index.html" class="back-link"> All contacts </a>
 
-        <h3 class="add-contact-title">Create Contact</h3>
+          <h3 class="add-contact-title">Create Contact</h3>
 
-        <button type="submit" form="contact-form" class="save-contacts">
-          <span class="material-symbols-outlined">save</span>
-          <span>Save</span>
-        </button>
-      </div>
-    </header>
+          <button type="submit" form="contact-form" class="save-contacts">
+            Save
+          </button>
+        </div>
+      </header>
 
-    <main class="form-container">
-      <form id="contact-form" class="contact-form">
-        <div class="form-details">
-          <label for="name">Name</label>
-          <div class="input-icon-wrapper">
-            <span class="material-symbols-outlined">person</span>
+      <main class="form-container">
+        <form id="contact-form" class="contact-form">
+          <div class="form-details">
+            <label for="name">Name</label>
             <input
               type="text"
               id="name"
@@ -41,12 +32,10 @@
               required
             />
           </div>
-        </div>
 
-        <div class="form-details">
-          <label for="email">Email</label>
-          <div class="input-icon-wrapper">
-            <span class="material-symbols-outlined">mail</span>
+          <div class="form-details">
+            <label for="email">Email</label>
+
             <input
               type="email"
               id="email"
@@ -55,16 +44,14 @@
               required
             />
           </div>
-        </div>
 
-        <div class="form-details">
-          <label for="phone">Phone</label>
-          <div class="phone-no">
-            <select name="country-code" id="country-code" required>
-              <option value="+91">+91</option>
-            </select>
-            <div class="input-icon-wrapper">
-              <span class="material-symbols-outlined">call</span>
+          <div class="form-details">
+            <label for="phone">Phone</label>
+            <div class="phone-no">
+              <select name="country-code" id="country-code" required>
+                <option value="+91">+91</option>
+              </select>
+
               <input
                 type="tel"
                 id="phone"
@@ -75,12 +62,10 @@
               />
             </div>
           </div>
-        </div>
 
-        <div class="form-details">
-          <label for="address">Address</label>
-          <div class="input-icon-wrapper textarea-wrapper">
-            <span class="material-symbols-outlined">home</span>
+          <div class="form-details">
+            <label for="address">Address</label>
+
             <textarea
               id="address"
               name="address"
@@ -89,8 +74,8 @@
               required
             ></textarea>
           </div>
-        </div>
-      </form>
-    </main>
+        </form>
+      </main>
+    </div>
   </body>
 </html>
