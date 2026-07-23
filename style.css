@@ -124,13 +124,13 @@ tbody tr td .CRUD:hover {
 }
 .contact-table th,
 .contact-table td {
-  padding: 12px 14px;
+  padding: 6px 8px;
   text-align: left;
 }
 .contact-table {
   width: 100%;
   border-collapse: collapse;
-  border-spacing: 0 15px;
+  border-spacing: 0 10px;
   margin-top: 20px;
   font-family: sans-serif;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -139,7 +139,7 @@ tbody tr td .CRUD:hover {
   overflow: hidden;
 }
 .contact-table th {
-  padding: 12px 14px;
+  padding: 8px 10px;
   background: black;
   color: white;
   font-weight: bold;
@@ -196,46 +196,51 @@ tbody tr td .CRUD:hover {
   width: 100%;
 }
 
-@media (max-width: 425px) {
-  .contact-form {
-    padding: 16px;
-  }
-  .form-details label {
-    font-size: 12px;
-  }
-  .table-container thead th {
-    display: none;
-  }
-  .table-container tbody td {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding-left: 10%;
-    position: relative;
-    line-height: 0.5;
+@media (max-width: 768px) {
+  .table-container table {
+    background: transparent;
   }
   .search {
     width: 100%;
+  }
+  .table-container thead {
+    display: none;
+  }
+  .table-container tbody tr {
+    display: block;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e2e8f0;
+  }
+  .table-container tbody td {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    color: #4a5568;
+  }
+  .table-container tbody td:last-child {
+    margin-top: 10px;
+    gap: 8px;
   }
   .add-contact-btn {
     padding: 8px 12px;
     font-size: 11px;
   }
+}
+@media (max-width: 426px) {
+  .table-container tbody td {
+    font-size: 12px;
+  }
+  .add-contact-btn {
+    padding: 6px 10px;
+    font-size: 8px;
+  }
+  .search {
+    width: 80%;
+  }
   .logo-area {
     font-size: 10px;
-  }
-}
-@media (max-width: 768px) {
-  .table-container {
-    margin: 10px;
-  }
-  .contact-form {
-    max-width: 100%;
-  }
-  .action-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-    transition: all 0.3s ease;
   }
 }
