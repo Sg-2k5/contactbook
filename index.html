@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TItle of the page -->
+    <title>Contactbook</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search"
+    />
+    <!--Invoking api for search Icon-->
+  </head>
+  <body>
+    <!-- Header bar containing the contactbook heading and search bar -->
+    <header class="topbar">
+      <div class="logo-area">
+        <!--Telephone logo-->
+        <img
+          src="https://www.svgrepo.com/show/205094/telephone-call-telephone.svg"
+          alt="phone"
+          width="20"
+          height="20"
+        />
+        Contact Book
+      </div>
+      <!--Svg icon for the contactbook header page-->
+      <!-- form search icon  and a placeholder-->
+    </header>
+    <section class="toolbar">
+      <!--contains searchbox and add contacts button-->
+      <form class="search-form">
+        <div class="search">
+          <span class="material-symbols-outlined">search</span>
+          <input
+            class="search-input"
+            type="search"
+            placeholder="Search Contacts"
+          />
+        </div>
+      </form>
+      <button
+        onclick="window.location.href = 'form.html'"
+        type="button"
+        class="add-contact-btn"
+      >
+        Create Contact
+      </button>
+    </section>
+
+    <!-- Storing List of contacts as the main content -->
+    <main class="contact-list">
+      <ul class="contacts"></ul>
+    </main>
+    <script src="script.js"></script>
+    <script src="displaycontacts.js"></script>
+  </body>
+</html>
