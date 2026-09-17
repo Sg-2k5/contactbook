@@ -39,20 +39,68 @@
           />
         </div>
       </form>
-      <button
-        onclick="window.location.href = 'form.html'"
-        type="button"
-        class="add-contact-btn"
-      >
-        Create Contact
+      <button type="button" class="add-contact-btn" id="create-contact">
+        create contact
+      </button>
+      <button type="button" class="bulk-delete-btn" id="bulk-delete-btn">
+        delete selected
       </button>
     </section>
+    <div id="modal-overlay" class="hidden">
+      <!--Parent container for the forms-->
+      <form id="contact-form" class="contact-form">
+        <button id="close-btn" type="button">&times;</button>
+        <center><h3>Create contacts</h3></center>
+        <div class="form-details">
+          <!--Parent container for both label and input field-->
+          <label for="name">Name</label
+          ><!--label for the name input field-->
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Full Name"
+          /><!--Input field for name-->
+        </div>
+        <div class="form-details">
+          <label for="email">Email</label
+          ><!--Label for email-->
 
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+          /><!--Email input box-->
+        </div>
+        <div class="form-details">
+          <!--Label for phone-details-->
+          <label for="phone">Phone</label>
+
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Mobile Number"
+          /><!--Phone  no input field-->
+        </div>
+        <div class="form-details">
+          <label for="address">Address</label>
+          <textarea
+            id="address"
+            name="address"
+            placeholder="Residential Address"
+          ></textarea
+          ><!--Input for taking the address input-->
+        </div>
+        <center>
+          <button type="submit" class="save-contacts">Save Contacts</button
+          ><!--Save contacts button  in the bottom center of the form page-->
+        </center>
+      </form>
+    </div>
     <!-- Storing List of contacts as the main content -->
-    <main class="contact-list">
-      <ul class="contacts"></ul>
-    </main>
+    <main class="contact-list"></main>
     <script src="script.js"></script>
-    <script src="displaycontacts.js"></script>
   </body>
 </html>

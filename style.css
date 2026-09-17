@@ -1,44 +1,71 @@
 * {
   margin: 0;
   padding: 0;
-}
+  box-sizing: border-box;
+} /*universal selector*/
+
 html,
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  width: 100%;
-  height: 100%;
+  width: 100%; /*Body and height width 100%*/
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header.topbar {
+  /*styling header background color*/
   background: rgb(207, 202, 202);
-  margin: 0;
   font-weight: bold;
   width: 100%;
   height: 10%;
-  box-sizing: border-box;
+  flex-shrink: 0;
   display: flex;
-  align-content: center;
-  padding-left: 10px;
+  align-items: center;
+  padding-left: 5px;
 }
 
 .logo-area {
+  /*contact header logo*/
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 section.toolbar {
-  margin-top: 10px;
+  width: 100%; /*Width of section*/
+  flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 10px 5px;
 }
+main {
+  /*making main content which has thecontact list to scroll*/
+  overflow-y: auto;
+  padding: 16px;
+}
+.topname {
+  display: flex;
+  gap: 12px;
+}
+.avatar {
+  width: 10%;
+  height: 30px;
+  border-radius: 51%;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #e5e7eb;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
 button.save-contacts {
+  /*save contact button style with green background and padding*/
   padding: 10px 16px;
   background-color: #4caf50;
   color: white;
@@ -48,58 +75,78 @@ button.save-contacts {
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  margin-top: 14px;
 }
 
 button.add-contact-btn {
+  /*create contact button style with green background and padding*/
   padding: 10px 16px;
   background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   margin-right: 20px;
 }
-button.display-contact-btn {
+
+button.bulk-delete-btn {
   padding: 10px 16px;
-  background-color: #4caf50;
+  background-color: #d32f2f;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  margin: 20px;
+  cursor: pointer;
+}
+
+.bulk-delete-btn:hover {
+  background-color: #b71c1c;
 }
 
 .add-contact-btn:hover {
-  background-color: #45a049;
+  /*hovering create contact btn*/
   transform: translateY(-1px);
   box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
 }
 
 .contacts {
+  /*Erasing Bullets*/
   list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
 }
 
 /*contact details in block*/
 .contact-details {
-  display: block;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  margin: 16px 0 16px 10px;
-  box-sizing: border-box;
-  width: 90%;
+  margin: 0;
   line-height: 1.3;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   position: relative;
-  padding: 16px;
+  padding: 10px;
   border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.contact-details:hover {
+  background-color: aliceblue;
+  transform: translatey(-2px);
 }
 
+.contact-details.selected {
+  outline: 2px solid #d32f2f;
+  background-color: #fff1f1;
+}
+/*Styling search box*/
 .search-form {
   flex: 1;
   display: flex;
@@ -113,16 +160,15 @@ button.display-contact-btn {
   border-radius: 20px;
   padding: 2px 8px;
   width: 200px;
-  box-sizing: border-box;
 }
-
+/*Styling search input*/
 .search-input[type="search"] {
   font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
   border: none;
   background: transparent;
-  outline: none;
+  outline: none; /*No outer box while typing*/
 }
 
 .search-input[type="search"]::placeholder {
@@ -133,38 +179,66 @@ button.display-contact-btn {
   background-color: #45a049;
   transform: translateY(-1px);
 }
-/*form container*/
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 16px;
+/* designing form using using modal overlay*/
+#modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* black background */
+  z-index: 100;
 }
-/*Contact form for getting input details*/
+.toast {
+  /*designing toast message*/
+  position: fixed;
+  top: 20px;
+  right: 500px;
+  max-width: calc(100vw - 40px);
+  padding: 12px 18px;
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 200;
+}
 .contact-form {
-  background: white;
-  padding: 18px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px; /* increase from default */
+  max-width: 90vw;
+  min-height: 370px; /* adds a little more height */
+  padding: 24px;
   border-radius: 10px;
-  width: 90%;
-  max-width: 480px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  background-color: #fff;
+  z-index: 101;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+#close-btn {
+  /*positioning close button*/
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .form-details {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .form-details label {
   font-weight: bold;
   font-size: 14px;
 }
-
+/*form details font*/
 .form-details input {
   padding: 8px;
   border: 1px solid black;
@@ -173,9 +247,21 @@ button.display-contact-btn {
   outline: none;
 }
 
-.error-msg {
-  color: red;
-  font-size: 10px;
+/*Contact name styling*/
+.contact-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+/*Contact info styling with icons*/
+.contact-email,
+.contact-phone,
+.contact-address {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #555;
 }
 
 /*Edit and delete buttons*/
@@ -197,18 +283,85 @@ button.display-contact-btn {
   background-color: red;
   padding: 10px;
 }
+/*confirmation box for delete*/
+.confirmation-box {
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  background: lightgray;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 280px;
+}
+/*styling yes or no buttons with parent container*/
+.confirmation-buttons {
+  display: flex;
+  margin-top: 12px;
+  gap: 10px;
+  justify-content: center;
+  line-height: 1.5;
+}
+/*yes/no buttons child container*/
+.yes-btn,
+.no-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 13px;
+}
+/*red for yes*/
+.yes-btn {
+  background-color: red;
+  color: white;
+}
+/*darkgrey for no*/
+.no-btn {
+  background-color: #6c757d;
+  color: white;
+}
 
 @media (max-width: 768px) {
   .search-form {
     width: 90%;
-    justify-content: center;
+    justify-content: center; /*search form in center*/
   }
 
   .search {
     width: 90%;
   }
-
-  .form-container {
-    padding: 15px;
+  .confirmation-box p {
+    /*para font in confirmation box*/
+    font-size: 12px;
+  }
+  .confirmation-box {
+    /* confirmation box*/
+    position: fixed;
+    top: 50%;
+    left: 10%;
+  }
+  .contact-details {
+    font-size: 12px;
+  }
+  button.Edit-btn {
+    /*edit btn*/
+    padding: 2px;
+  }
+  button.Delete-btn {
+    /*dlete btn*/
+    padding: 2px;
+  }
+  button.add-contact-btn {
+    /*save contact btn*/
+    font-size: 10px;
+  }
+  .toast {
+    /*positioning toast message*/
+    top: 20px;
+    right: 20px;
+    max-width: calc(100vw - 40px);
+    text-align: center;
   }
 }
