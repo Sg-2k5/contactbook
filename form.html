@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="view-transition" content="same-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Contact</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-page">
+      <header>
+        <div class="add-contact-header">
+          <a href="index.html" class="back-link"> &larr;All contacts </a>
+
+          <h3 class="add-contact-title">Create Contact</h3>
+
+          <button type="submit" form="contact-form" class="save-contacts">
+            Save
+          </button>
+        </div>
+      </header>
+      <main class="form-container">
+        <form id="contact-form" class="contact-form">
+          <div class="form-details">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div class="form-details">
+            <label for="email">Email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <div class="form-details">
+            <label for="phone">Phone</label>
+            <div class="phone-no">
+              <select name="country-code" id="country-code" required>
+                <option value="+91">+91</option>
+              </select>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                maxlength="10"
+                placeholder="Mobile Number"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-details">
+            <label for="address">Address</label>
+            <textarea
+              id="address"
+              name="address"
+              rows="3"
+              placeholder="Residential Address"
+              required
+            ></textarea>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
